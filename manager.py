@@ -31,7 +31,7 @@ class Manager:
             piece_position, move = player.make_move()
             piece = self.game.board.get_piece(piece_position)
             if piece:
-                if self.game.judge.process_move(piece=piece, board=self.game.board, move=move):
+                if self.game.judge.is_move_valid(piece=piece, board=self.game.board, move=move):
                     self.game.do_a_move(piece=piece, move=move)
                     break
 

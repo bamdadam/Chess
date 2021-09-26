@@ -8,6 +8,9 @@ class Chess:
         self.judge = judge
 
     def do_a_move(self, piece, move):
+        piece_to_remove = self.judge.process_move(piece, self.board, move)
+        if piece_to_remove:
+            self.remove_piece(piece_to_remove)
         piece.move_piece(move)
 
     def show_board(self):
@@ -19,4 +22,7 @@ class Chess:
                 else:
                     print("EMP ", end='')
             print()
+
+    def remove_piece(self, piece):
+        self.board.pieces.remove(piece)
 

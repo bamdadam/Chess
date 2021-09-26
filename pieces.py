@@ -69,6 +69,8 @@ class Piece(ABC):
         self.y = move[1]
 
 
+
+
 class PieceFactory:
     @staticmethod
     def build_piece(piece_type: str, x, y, color):
